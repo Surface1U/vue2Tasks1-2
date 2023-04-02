@@ -14,12 +14,17 @@
       <label for="message">Message</label>
       <textarea class="form-control" id="message" v-model="message"></textarea>
     </div>
+   
+   
+   //кнопочки начало
     <div class="form-group">
       <button type="button" class="btn btn-primary" @click="submitForm">Submit</button>
       <button type="button" class="btn btn-danger" @click="cancelSubmit" :disabled="!isSubmitting">Cancel</button>
     </div>
   </form>
   </div>
+  //кнопочки КАНЕЦ
+  
   <footer class="footer">
   <div class="footer__addr">
     <h1 class="footer__logo">Something</h1>
@@ -137,7 +142,7 @@ export default {
       formData.append('message', this.message);
 
       try {
-        const response = await fetch('https://formcarry.com/s/_za4hIyCdy', {
+        const response = await fetch('https://formcarry.com/s/{yourID}', {
           method: 'POST',
           body: formData,
           headers: {
